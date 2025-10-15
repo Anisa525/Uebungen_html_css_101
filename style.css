@@ -78,11 +78,11 @@ body {
 h1,
 h2,
 h3 {
-  color: #b23b6b;
+  color: #f18ab4;
 }
 
 .btn-primary {
-  background-color: #b23b6b;
+  background-color: #793b53;
   border: none;
 }
 
@@ -139,5 +139,19 @@ footer {
     margin-bottom: 15px;
   }
 }
+/* Mit Chat gpt generiert da es mit dem Java code zusammen hängt*/
+.remove-item {
+  background-color: #b23b6b; /* Hintergrundfarbe */
+  color: white;               /* Textfarbe */
+  border: none;               /* Rand entfernen */
+  padding: 0.25rem 0.5rem;    /* etwas Padding */
+  border-radius: 5px;         /* abgerundete Ecken */
+  font-size: 0.85rem;         /* Schriftgröße */
+  cursor: pointer;            /* Mauszeiger als Hand */
+}
 
+.remove-item:hover {
+  background-color: #8a2f55; /* Farbe beim Hover */
+  color: #fff;
+}
 
