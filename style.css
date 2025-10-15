@@ -32,6 +32,15 @@
   color: white;
   text-align: center;
 }
+#sell{
+   background-image: url('images/Studio.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* besser als 100% 100%, bleibt proportional */
+  background-attachment: fixed;
+  padding: 50px 20px;
+  color: white; 
+}
 
 #products .card {
   background-color: rgba(255, 255, 255, 0.85);
@@ -78,7 +87,7 @@ h3 {
 }
 
 .btn-primary:hover {
-  background-color: #8a2f55;
+  background-color: #e6a9c2;
 }
 
 .blush-img {
@@ -102,15 +111,33 @@ h3 {
 }
 
 .btn-success {
-  background-color: #b23b6b;
+  background-color: #c7678d;
   border: none;
 }
 
 .btn-success:hover {
-  background-color: #8a2f55;
+  background-color: #a27186;
 }
 
 footer {
   font-size: 0.9rem;
   color: #555;
 }
+.photos {
+  width: 100%;        /* passt sich dem Container an */
+  max-width: 400px;   /* maximale Breite */
+  height: auto;       /* proportional */
+  border-radius: 8px; /* optional */
+  display: block;
+  margin: 0 0 20px 0; /* nur unten Abstand, links oben rechts = 0 */
+}
+
+/* Auf kleinen Bildschirmen */
+@media (max-width: 576px) {
+  .photos {
+    max-width: 100%;   /* volle Breite auf kleinen Geräten */
+    margin-bottom: 15px;
+  }
+}
+
+

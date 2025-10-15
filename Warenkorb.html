@@ -48,7 +48,7 @@
       <h4 class="mb-3">🧾 Zusammenfassung</h4>
       <div class="d-flex justify-content-between">
         <span>Gesamtsumme:</span>
-        <span id="total-price">0,00 €</span>
+        <span id="total-price">0,00 fr.</span>
       </div>
       <div class="text-center mt-4">
         <button class="btn btn-success btn-lg">💳 Jetzt kaufen</button>
@@ -88,7 +88,7 @@
                 </div>
                 <div class="col-8 ps-3">
                   <h5>${item.name}</h5>
-                  <p class="fw-bold mb-1">${item.price.toFixed(2)} €</p>
+                  <p class="fw-bold mb-1">${item.price.toFixed(2)} CHF</p>
                   <p class="text-muted small mb-1">Menge: ${item.quantity}</p>
                   <button class="btn btn-sm btn-outline-danger remove-item" data-name="${item.name}">Entfernen</button>
                 </div>
@@ -99,7 +99,7 @@
         total += item.price * item.quantity;
       });
 
-      totalPriceElement.textContent = total.toFixed(2) + " €";
+      totalPriceElement.textContent = total.toFixed(2) + " CHF";
 
       // Entfernen-Funktion
       document.querySelectorAll('.remove-item').forEach(btn => {
