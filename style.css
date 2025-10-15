@@ -1,0 +1,116 @@
+/* Hero-Bereich */
+#hero {
+  background-image: url('images/Studio3.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+/* Text im Hero zentrieren */
+.hero-text {
+  text-align: center;
+}
+
+/* Optional: Button-Anpassung im Hero */
+#hero .btn-light {
+  margin-top: 10px;
+}
+
+#products {
+  background-image: url('images/Studio.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* besser als 100% 100%, bleibt proportional */
+  background-attachment: fixed;
+  padding: 50px 20px;
+  color: white;
+  text-align: center;
+}
+
+#products .card {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+#products .card {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 768px) {
+  #products {
+    background-attachment: scroll;
+  }
+}
+
+#content .card-img-top {
+  width: 100%;
+  /* passt sich der Kartenbreite an */
+  height: 250px;
+  /* feste Höhe für alle Bilder */
+  object-fit: contain;
+  /* Bild wird vollständig angezeigt */
+  background-color: #fff;
+  /* Hintergrund, falls das Bild kleiner ist */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+body {
+  background-color: #fffafc;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  color: #b23b6b;
+}
+
+.btn-primary {
+  background-color: #b23b6b;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #8a2f55;
+}
+
+.blush-img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.blush-img:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  max-height: 150px;
+  object-fit: contain;
+}
+
+.remove-item {
+  font-size: 0.85rem;
+}
+
+.btn-success {
+  background-color: #b23b6b;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #8a2f55;
+}
+
+footer {
+  font-size: 0.9rem;
+  color: #555;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blush – Chrystal & Co.</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/logo1.png" type="image/png">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs justify-content-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Start</a></li>
+            <li class="nav-item"><a class="nav-link" href="Concealer.html">Concealer</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="true" href="Blush.html">Blush</a></li>
+            <li class="nav-item"><a class="nav-link" href="Contour.html">Contour</a></li>
+            <li class="nav-item"><a class="nav-link" href="Lipgloss.html">Lipgloss</a></li>
+            <li class="nav-item"><a class="nav-link" href="Highlighter.html">Highlighter</a></li>
+            <li class="nav-item"><a class="nav-link" href="Primer.html">Primer</a></li>
+            <li class="nav-item"><a class="nav-link" href="Puder.html">Puder</a></li>
+            <li class="nav-item"><a class="nav-link" href="Foundation.html">Foundation</a></li>
+            <li class="nav-item"><a class="nav-link" href="Haarspray.html">Haarspray</a></li>
+            <li class="nav-item"><a class="nav-link" href="About us.html">About us</a></li>
+            <li class="nav-item"><a class="nav-link" href="Warenkorb.html">Warenkorb</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Produktbereich -->
+  <main class="container my-5">
+    <div class="row align-items-center">
+      <!-- Produktbild -->
+      <div class="col-md-5 text-center">
+        <img src="images/Blush.jpg" alt="Blush Produkt" class="img-fluid rounded shadow-sm blush-img">
+      </div>
+
+      <!-- Produktbeschreibung -->
+      <div class="col-md-7">
+        <h1 class="mb-3">Blush Rosé Glow</h1>
+        <p class="lead text-muted">Ein sanfter, langanhaltender Rouge-Ton für einen frischen, natürlichen Look.</p>
+
+        <h4 class="text-danger fw-bold mb-3">Preis: 14,99 €</h4>
+
+        <!-- Kaufen-Button -->
+        <button 
+          class="btn btn-primary btn-lg add-to-cart"
+          data-name="Blush Rosé Glow"
+          data-price="14.99"
+          data-image="images/Blush.jpg">
+          🛒 In den Warenkorb
+        </button>
+      </div>
+    </div>
+
+    <hr class="my-5">
+
+    <!-- Anleitung -->
+    <section class="mt-4">
+      <h2>Blush richtig auftragen</h2>
+
+      <ol class="mt-3">
+        <li><strong>Wie finde ich die richtige Stelle?</strong><br>
+          Lächle leicht, um den höchsten Punkt deiner Wangenknochen zu sehen. Dort setzt du den Pinsel an.
+        </li>
+        <li><strong>Auftragen mit der richtigen Technik:</strong><br>
+          <em>Lifting-Effekt:</em> Trage den Blush auf den Wangenknochen in Richtung Schläfe auf.<br>
+          <em>Apfelbäckchen-Look:</em> Lächle und trage ihn auf die „Äpfelchen“ deiner Wangen auf für einen frischen Look.
+        </li>
+        <li><strong>Verblenden:</strong><br>
+          Verblende mit sanften, aufwärts gerichteten Bewegungen. Wenn du keinen Pinsel hast, kannst du (mit sauberen Händen!) den Finger verwenden.
+        </li>
+        <li><strong>Intensität anpassen:</strong><br>
+          Für ein zartes Ergebnis weniger Produkt verwenden, für mehr Ausdruck Farbe schichtweise aufbauen.
+        </li>
+      </ol>
+      <img src="images/Blush_auftragen.jpg" alt="Blush Anwendung">
+
+      <h3 class="mt-4">💡 Tipps:</h3>
+      <ul>
+        <li>Für lange Gesichter: Blush waagrecht auftragen, um sie optisch zu verkürzen.</li>
+        <li>Für eckige Gesichter: Weiter oben in Richtung Schläfe auftragen für weichere Züge.</li>
+        <li>Für trockene Haut: Creme- oder Flüssigrouge verwenden.</li>
+        <li>Für ölige Haut: Puderrouge ist besser geeignet.</li>
+        <li>Verwende etwas Blush auf Lippen und Nasenrücken für einen frischen, harmonischen Look.</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 bg-light mt-5">
+    <p class="mb-0">&copy; 2025 Chrystal & Co. – Make-up mit Liebe</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Warenkorb-Funktion -->
+  <script>
+    // Produkt in localStorage speichern
+    document.querySelector('.add-to-cart').addEventListener('click', function() {
+      const product = {
+        name: this.dataset.name,
+        price: parseFloat(this.dataset.price),
+        image: this.dataset.image,
+        quantity: 1
+      };
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      const existing = cart.find(item => item.name === product.name);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push(product);
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(product.name + " wurde zum Warenkorb hinzugefügt!");
+    });
+  </script>
+
+</body>
+</html>
