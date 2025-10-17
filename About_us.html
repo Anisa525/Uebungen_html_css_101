@@ -44,7 +44,8 @@
   </header>
 
   <!-- Hero / Banner -->
-  <section id="hero" class="bg-light text-dark py-5" style="background-image: url('images/Fabrik2.png'); background-size: cover; background-position: center;">
+  <section id="hero" class="bg-light text-dark py-5"
+    style="background-image: url('images/Fabrik2.png'); background-size: cover; background-position: center;">
     <div class="container text-center">
       <h1>Über Chrystal & Co.</h1>
       <p class="text-crystal">Make-up mit Liebe – Qualität, Innovation & Leidenschaft</p>
@@ -55,18 +56,21 @@
   <main class="container my-5">
     <div class="row align-items-center mb-5">
       <div class="col-md-6">
-        <img src="images/Firma.png" alt="Team Chrystal & Co." class="img-about">
+        <img src="images/Firma.png" alt="Firma" class="img-fluid rounded shadow-sm mt-3 clickable-img img-about">
       </div>
       <div class="col-md-6">
         <h2>Unsere Geschichte</h2>
-        <p>Chrystal & Co. wurde 2020 mit der Mission gegründet, Make-up-Produkte zu entwickeln, die sowohl hochwertig als auch nachhaltig sind. Unser Ziel ist es, Menschen zu inspirieren und ihre natürliche Schönheit zu unterstreichen.</p>
-        <p>Wir kombinieren moderne Trends mit bewährten Techniken, um Produkte zu schaffen, die einfach in der Anwendung sind und langanhaltende Ergebnisse liefern.</p>
+        <p>Chrystal & Co. wurde 2020 mit der Mission gegründet, Make-up-Produkte zu entwickeln, die sowohl hochwertig
+          als auch nachhaltig sind. Unser Ziel ist es, Menschen zu inspirieren und ihre natürliche Schönheit zu
+          unterstreichen.</p>
+        <p>Wir kombinieren moderne Trends mit bewährten Techniken, um Produkte zu schaffen, die einfach in der Anwendung
+          sind und langanhaltende Ergebnisse liefern.</p>
       </div>
     </div>
-
+<!--Text mit Chatgpt-->
     <div class="row align-items-center mb-5 flex-md-row-reverse">
       <div class="col-md-6">
-        <img src="images/fabrik.png" alt="Produktion und Labor" class="img-about">
+        <img src="images/fabrik.png" alt="Fabrik" class="img-fluid rounded shadow-sm mt-3 clickable-img img-about">
       </div>
       <div class="col-md-6">
         <h2>Unsere Werte</h2>
@@ -83,10 +87,18 @@
       <div class="col">
         <h2>Treffe unser Team</h2>
         <p>Unsere Beauty-Expertinnen und Produktentwickler arbeiten täglich daran, euch das Beste zu bieten.</p>
-        <img src="images/Team.png" alt="Teammitglieder" class="img-Team">
+
+        <!-- Team-Foto -->
+        <img src="images/Team.png" alt="Unser Team" class="img-fluid rounded shadow-sm mt-3 clickable-img img-Team">
       </div>
     </div>
   </main>
+
+  <!-- Lightbox Overlay -->
+  <div id="lightbox" class="lightbox" style="display:none; position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;z-index:999;">
+    <span class="close" style="position:absolute;top:20px;right:30px;font-size:40px;color:white;cursor:pointer;">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" style="max-width:90%;max-height:90%;border-radius:10px;">
+  </div>
 
   <!-- Footer -->
   <footer class="bg-dark text-white text-center py-4">
@@ -96,5 +108,31 @@
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+  <!-- JS für Lightbox -->
+  <script>
+    const clickableImages = document.querySelectorAll('.clickable-img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.close');
+
+    clickableImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) {
+        lightbox.style.display = "none";
+      }
+    });
+  </script>
+
 </body>
+
 </html>
