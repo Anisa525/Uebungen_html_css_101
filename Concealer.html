@@ -27,7 +27,7 @@
             <li class="nav-item"><a class="nav-link" href="Highlighter.html">Highlighter</a></li>
             <li class="nav-item"><a class="nav-link" href="Primer.html">Primer</a></li>
             <li class="nav-item"><a class="nav-link" href="Puder.html">Puder</a></li>
-            <li class="nav-item"><a class="nav-link" href="Foundation.html">Fundation</a></li>
+            <li class="nav-item"><a class="nav-link" href="Foundation.html">Foundation</a></li>
             <li class="nav-item"><a class="nav-link" href="Bronzer.html">Bronzer</a></li>
             <li class="nav-item"><a class="nav-link" href="Haarspray.html">Haarprodukte</a></li>
             <li class="nav-item"><a class="nav-link" href="About_us.html">About us</a></li>
@@ -43,20 +43,20 @@
     <div id="sell" class="row align-items-center">
       <!-- Produktbild -->
       <div class="col-md-5 text-center">
-        <img src="images/Concealer.png" alt="Concealer Produkt" class="img-Produkte">
+        <img src="images/Concealer.png" alt="Concealer Perfekt Cover Produktbild" class="img-Produkte">
       </div>
 
       <!-- Produktbeschreibung -->
       <div class="col-md-7">
         <h1 class="mb-3">Concealer Perfekt Cover</h1>
-        <p class="lead text-white">Perfekte Abdeckung für kleine Makel und ein gleichmässiger Teint.</p>
+        <p class="lead text-white">Perfekte Abdeckung für kleine Makel und ein gleichmäßiger Teint.</p>
 
         <h4 class="text-white fw-bold mb-3">Preis: 12.99 CHF</h4>
 
         <!-- Kaufen-Button -->
         <button 
           class="btn btn-primary btn-lg add-to-cart"
-          data-name="Concealer"
+          data-name="Concealer Perfekt Cover"
           data-price="12.99"
           data-image="images/Concealer.png">
           🛒 In den Warenkorb
@@ -72,17 +72,23 @@
 
       <ol class="mt-3">
         <li><strong>Hautvorbereitung:</strong><br>
-         • Reinigen Sie Ihr Gesicht und tragen Sie eine Feuchtigkeitscreme auf.
+          • Reinige dein Gesicht gründlich und trage eine Feuchtigkeitscreme auf.
         </li>
         <li><strong>Concealer auftragen:</strong><br>
-         • Tragen Sie den Concealer sanft mit einem Pinsel oder Schwamm auf. Beim Schwamm sollte man diesen vor dem Anwenden leicht nass machen. Wenn Wasser am Tropfen ist, ist der Schwamm zu nass.
+          • Trage den Concealer sanft mit Pinsel oder Schwamm auf.  
+          • Schwamm vorher leicht anfeuchten – zu nass wirkt er ungleichmäßig.  
         </li>
         <li><strong>Verblenden:</strong><br>
-         • Verblenden Sie den Concealer sanft mit einem Pinsel oder Schwamm. Beim Schwamm sollte man diesen vor dem Anwenden leicht nass machen. Wenn Wasser am Tropfen ist, ist der Schwamm zu nass. Man kann das Ganze ebenfalls mit dem Finger machen (nicht zu empfehlen), jedoch sollten die Hände sauber sein. Kein sehr gutes Ergebnis ist garantiert.
+          • Verblende den Concealer sanft mit Pinsel, Schwamm oder sauberen Fingern.  
+          • Achte auf saubere Hände, Fingeranwendung liefert nicht immer optimale Ergebnisse.
         </li>
       </ol>
 
-      <img  src="images/Concealer_auftragen.jpg" alt="Concealer Anwendung" class="photos img-fluid mt-3">
+      <!-- Bild mit linksbündiger Bildunterschrift -->
+      <figure>
+        <img src="images/Concealer_auftragen.jpg" alt="Concealer Anwendung" class="photos img-fluid mt-3">
+        <figcaption class="mt-2 text-muted">So trägst du den Concealer Perfekt Cover richtig auf.</figcaption>
+      </figure>
     </section>
   </main>
 
@@ -96,26 +102,25 @@
 
   <!-- Warenkorb-Funktion -->
   <script>
-    document.querySelector('.add-to-cart').addEventListener('click', function() {
-      const product = {
-        name: this.dataset.name,
-        price: parseFloat(this.dataset.price),
-        image: this.dataset.image,
-        quantity: 1
-      };
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', function() {
+        const product = {
+          name: this.dataset.name,
+          price: parseFloat(this.dataset.price),
+          image: this.dataset.image,
+          quantity: 1
+        };
 
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existing = cart.find(item => item.name === product.name);
+        if (existing) existing.quantity += 1;
+        else cart.push(product);
 
-      const existing = cart.find(item => item.name === product.name);
-      if (existing) {
-        existing.quantity += 1;
-      } else {
-        cart.push(product);
-      }
-
-      localStorage.setItem('cart', JSON.stringify(cart));
-      alert(product.name + " wurde zum Warenkorb hinzugefügt!");
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(product.name + " wurde zum Warenkorb hinzugefügt!");
+      });
     });
   </script>
+
 </body>
 </html>

@@ -28,7 +28,7 @@
             <li class="nav-item"><a class="nav-link" href="Highlighter.html">Highlighter</a></li>
             <li class="nav-item"><a class="nav-link" href="Primer.html">Primer</a></li>
             <li class="nav-item"><a class="nav-link" href="Puder.html">Puder</a></li>
-            <li class="nav-item"><a class="nav-link" href="Foundation.html">Fundation</a></li>
+            <li class="nav-item"><a class="nav-link" href="Foundation.html">Foundation</a></li>
             <li class="nav-item"><a class="nav-link" href="Bronzer.html">Bronzer</a></li>
             <li class="nav-item"><a class="nav-link" href="Haarspray.html">Haarprodukte</a></li>
             <li class="nav-item"><a class="nav-link" href="About_us.html">About us</a></li>
@@ -44,7 +44,7 @@
     <div id="sell" class="row align-items-center">
       <!-- Produktbild -->
       <div class="col-md-5 text-center">
-        <img src="images/Contour.png" alt="Produktbild" class="img-Produkte">
+        <img src="images/Contour.png" alt="Contour Stick Produktbild" class="img-Produkte">
       </div>
 
       <!-- Produktbeschreibung -->
@@ -55,8 +55,9 @@
         <h4 class="text-white fw-bold mb-3">Preis: 15.99 CHF</h4>
 
         <!-- Kaufen-Button -->
-        <button class="btn btn-primary btn-lg add-to-cart" 
-          data-name="Contour" data-price="15.99"
+        <button class="btn btn-primary btn-lg add-to-cart"
+          data-name="Contour Stick"
+          data-price="15.99"
           data-image="images/Contour.png">
           🛒 In den Warenkorb
         </button>
@@ -65,42 +66,39 @@
 
     <hr class="my-5">
 
-    <!-- Anleitung / Beschreibung -->
+    <!-- Anleitung -->
     <section class="mt-4">
       <h2>Anwendung & Tipps</h2>
 
       <ol class="mt-3">
         <li><strong>Vorbereitung:</strong><br>
-         • Beginne mit einer sauberen, gut hydrierten Haut und trage eine
-          Foundation auf.
+          • Beginne mit sauberer, gut hydratisierter Haut und trage eine Foundation auf.
         </li>
-        <li><strong>Auftragen:</strong> <br>
-         • Setze das Contouring-Produkt (Stick, Puder oder Creme) unterhalb
-          der Wangenknochen, an den Schläfen, entlang des Kieferknochens und an den
-          Seiten der Nase an.
+        <li><strong>Auftragen:</strong><br>
+          • Setze den Contour Stick unterhalb der Wangenknochen, an den Schläfen, entlang des Kieferknochens
+            und an den Seiten der Nase an.
         </li>
         <li><strong>Verblenden:</strong><br>
-         • Verblende das Produkt in nach oben gerichteten, leichten
-          Bewegungen mit einem Pinsel oder Schwamm, um einen natürlichen Schatten zu
-          erzeugen. Vermeide es, nach unten zu verblenden, da dies das Gesicht eher
-          herunterzieht wirken lässt.
+          • Verblende das Produkt mit Pinsel oder Schwamm in leichten, nach oben gerichteten Bewegungen für
+            einen natürlichen Schatten. Vermeide das Verblenden nach unten, um das Gesicht nicht optisch
+            zu ziehen.
         </li>
       </ol>
 
-      <img src="images/auftragen_countur.jpg" alt="Anwendung" class="photos img-fluid mt-3">
+      <!-- Bild mit linksbündiger Bildunterschrift -->
+      <figure>
+        <img src="images/auftragen_countur.jpg" alt="Contour Stick Anwendung" class="photos img-fluid mt-3">
+        <figcaption class="mt-2 text-muted">So trägst du den Contour Stick richtig auf.</figcaption>
+      </figure>
+
       <h3 class="mt-4">💡 Tipps:</h3>
       <ul>
-        <li>Wangenknochen: Trage das Produkt in einer Linie von der Spitze des Ohres zum Mundwinkel und verblende es
-          nach oben in Richtung der Ohren.</li>
-        <li>Nase: Ziehe zwei vertikale Linien am Nasenrücken entlang, um die Nase schmaler erscheinen zu lassen.</li>
-        <li>Stirn: Trage die Konturfarbe an den Seiten der Stirn auf, um sie zu verkleinern, insbesondere bei einer
-          hohen Stirn.</li>
-        <li>Kieferlinie: Konturiere direkt unter dem Kieferknochen, um die Kieferlinie zu definieren und zu schärfen.
-        </li>
-        <li>Verblendung: Verblende das Produkt gut, damit keine harten Linien sichtbar sind und das Ergebnis nahtlos
-          aussieht.</li>
-        <li>Unterschied zu Bronzer: Contouring dient der Modellierung und dem Erzeugen von Schatten, während Bronzer
-          dazu dient, dem Teint Wärme zu verleihen</li>
+        <li>Wangenknochen: Von der Ohrspitze zum Mundwinkel, nach oben verblenden.</li>
+        <li>Nase: Zwei vertikale Linien am Nasenrücken ziehen für schmalere Optik.</li>
+        <li>Stirn: Konturfarbe an den Stirnseiten auftragen, besonders bei hoher Stirn.</li>
+        <li>Kieferlinie: Unter dem Kieferknochen konturieren für Definition.</li>
+        <li>Verblendung: Gut verblenden, keine harten Linien sichtbar.</li>
+        <li>Unterschied zu Bronzer: Contouring erzeugt Schatten, Bronzer verleiht Wärme.</li>
       </ul>
     </section>
   </main>
@@ -110,32 +108,31 @@
     <p class="mb-0">&copy; 2025 Chrystal & Co. – Make-up mit Liebe</p>
   </footer>
 
-  <!-- Bootstrap JS -->
-<script>
-document.querySelectorAll('.add-to-cart').forEach(button => {
-  button.addEventListener('click', function () {
-    const product = {
-      name: this.dataset.name,
-      price: parseFloat(this.dataset.price),
-      image: this.dataset.image,
-      quantity: 1
-    };
-
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const existing = cart.find(item => item.name === product.name);
-
-    if (existing) {
-      existing.quantity += 1;
-    } else {
-      cart.push(product);
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert(product.name + " wurde zum Warenkorb hinzugefügt!");
-  });
-});
-</script>
+  <!-- Bootstrap JS & Warenkorb -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  <script>
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', function () {
+        const product = {
+          name: this.dataset.name,
+          price: parseFloat(this.dataset.price),
+          image: this.dataset.image,
+          quantity: 1
+        };
 
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existing = cart.find(item => item.name === product.name);
+
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push(product);
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(product.name + " wurde zum Warenkorb hinzugefügt!");
+      });
+    });
+  </script>
+</body>
 </html>

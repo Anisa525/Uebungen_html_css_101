@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blush Rosé Glow – Ein sanfter, langanhaltender Rouge-Ton von Chrystal & Co. für einen natürlichen Glow.">
   <title>Blush – Chrystal & Co.</title>
 
   <!-- Bootstrap -->
@@ -15,23 +16,25 @@
 
   <!-- Navigation -->
   <header>
-    <nav>
+    <nav aria-label="Hauptnavigation">
       <div class="card text-center">
         <div class="card-header">
-          <ul class="nav nav-tabs card-header-tabs justify-content-center">
+          <ul class="nav nav-tabs card-header-tabs justify-content-center" role="menubar">
             <li class="nav-item"><a class="nav-link" href="index.html">Start</a></li>
             <li class="nav-item"><a class="nav-link" href="Concealer.html">Concealer</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="true" href="Blush.html">Blush</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="Blush.html">Blush</a></li>
             <li class="nav-item"><a class="nav-link" href="Contour.html">Contour</a></li>
             <li class="nav-item"><a class="nav-link" href="Lipgloss.html">Lipgloss</a></li>
             <li class="nav-item"><a class="nav-link" href="Highlighter.html">Highlighter</a></li>
             <li class="nav-item"><a class="nav-link" href="Primer.html">Primer</a></li>
             <li class="nav-item"><a class="nav-link" href="Puder.html">Puder</a></li>
-            <li class="nav-item"><a class="nav-link" href="Foundation.html">Fundation</a></li>
+            <li class="nav-item"><a class="nav-link" href="Foundation.html">Foundation</a></li>
             <li class="nav-item"><a class="nav-link" href="Bronzer.html">Bronzer</a></li>
             <li class="nav-item"><a class="nav-link" href="Haarspray.html">Haarprodukte</a></li>
             <li class="nav-item"><a class="nav-link" href="About_us.html">About us</a></li>
-            <li class="nav-item"><a class="nav-link" href="Warenkorb.html">🛒</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="Warenkorb.html" aria-label="Zum Warenkorb">🛒</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -39,11 +42,11 @@
   </header>
 
   <!-- Produktbereich -->
-  <main  class="container my-5">
-    <div id="sell" class="row align-items-center">
+  <main class="container my-5" id="main-content">
+    <section id="sell" class="row align-items-center">
       <!-- Produktbild -->
       <div class="col-md-5 text-center">
-        <img src="images/Blush1.jpg" alt="Blush Produkt" class="img-Produkte">
+        <img src="images/Blush1.jpg" alt="Produktfoto des Blush Rosé Glow" class="img-Produkte rounded shadow-sm">
       </div>
 
       <!-- Produktbeschreibung -->
@@ -51,43 +54,52 @@
         <h1 class="mb-3">Blush Rosé Glow</h1>
         <p class="lead text-white">Ein sanfter, langanhaltender Rouge-Ton für einen frischen, natürlichen Look.</p>
 
-        <h4 class="text-white fw-bold mb-3">Preis: 14.99 CHF </h4>
+        <p class="text-white fw-bold mb-3">Preis: 14.99 CHF</p>
 
         <!-- Kaufen-Button -->
         <button 
           class="btn btn-primary btn-lg add-to-cart"
           data-name="Blush Rosé Glow"
           data-price="14.99"
-          data-image="images/Blush1.jpg">
+          data-image="images/Blush1.jpg"
+          aria-label="Blush Rosé Glow in den Warenkorb legen">
           🛒 In den Warenkorb
         </button>
       </div>
-    </div>
+    </section>
 
-    <hr class="my-5">
+    <hr class="my-5" aria-hidden="true">
 
     <!-- Anleitung -->
-    <section  class="mt-4">
-      <h2>Blush richtig auftragen</h2>
+    <section id="application-guide" class="mt-4" aria-labelledby="blush-heading">
+      <h2 id="blush-heading">Blush richtig auftragen</h2>
 
       <ol class="mt-3">
-        <li><strong>Wie finde ich die richtige Stelle?</strong><br>
-         • Lächle leicht, um den höchsten Punkt deiner Wangenknochen zu sehen. Dort setzt du den Pinsel an.
+        <li>
+          <strong>Wie finde ich die richtige Stelle?</strong><br>
+          Lächle leicht, um den höchsten Punkt deiner Wangenknochen zu sehen. Dort setzt du den Pinsel an.
         </li>
-        <li><strong>Auftragen mit der richtigen Technik:</strong><br>
-         • <em>Lifting-Effekt:</em> Trage den Blush auf den Wangenknochen in Richtung Schläfe auf.<br>
-         • <em>Apfelbäckchen-Look:</em> Lächle und trage ihn auf die „Äpfelchen“ deiner Wangen auf für einen frischen Look.
+        <li>
+          <strong>Auftragen mit der richtigen Technik:</strong><br>
+          <em>Lifting-Effekt:</em> Trage den Blush auf den Wangenknochen in Richtung Schläfe auf.<br>
+          <em>Apfelbäckchen-Look:</em> Lächle und trage ihn auf die „Äpfelchen“ deiner Wangen auf für einen frischen Look.
         </li>
-        <li><strong>Verblenden:</strong><br>
-         • Verblende mit sanften, aufwärts gerichteten Bewegungen. Wenn du keinen Pinsel hast, kannst du (mit sauberen Händen!) den Finger verwenden.
+        <li>
+          <strong>Verblenden:</strong><br>
+          Verblende mit sanften, aufwärts gerichteten Bewegungen. Wenn du keinen Pinsel hast, kannst du (mit sauberen Händen!) den Finger verwenden.
         </li>
-        <li><strong>Intensität anpassen:</strong><br>
-         • Für ein zartes Ergebnis weniger Produkt verwenden, für mehr Ausdruck Farbe schichtweise aufbauen.
+        <li>
+          <strong>Intensität anpassen:</strong><br>
+          Für ein zartes Ergebnis weniger Produkt verwenden, für mehr Ausdruck Farbe schichtweise aufbauen.
         </li>
       </ol>
-      <img src="images/Blush_auftragen.jpg" alt="Blush Anwendung" class="photos">
 
-      <h3 class="mt-4">💡 Tipps:</h3>
+      <figure class="text-center mt-4">
+        <img src="images/Blush_auftragen.jpg" alt="Anwendung des Blush Rosé Glow im Gesicht" class="photos rounded shadow-sm">
+        <figcaption class="mt-2 text-muted">So trägst du den Blush Rosé Glow richtig auf.</figcaption>
+      </figure>
+
+      <h3 class="mt-4">💡 Tipps</h3>
       <ul>
         <li>Für lange Gesichter: Blush waagrecht auftragen, um sie optisch zu verkürzen.</li>
         <li>Für eckige Gesichter: Weiter oben in Richtung Schläfe auftragen für weichere Züge.</li>
@@ -127,7 +139,7 @@
       }
 
       localStorage.setItem('cart', JSON.stringify(cart));
-      alert(product.name + " wurde zum Warenkorb hinzugefügt!");
+      alert(`${product.name} wurde zum Warenkorb hinzugefügt!`);
     });
   </script>
 
