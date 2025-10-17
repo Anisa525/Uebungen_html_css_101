@@ -26,8 +26,9 @@
             <li class="nav-item"><a class="nav-link" href="Highlighter.html">Highlighter</a></li>
             <li class="nav-item"><a class="nav-link" href="Primer.html">Primer</a></li>
             <li class="nav-item"><a class="nav-link" href="Puder.html">Puder</a></li>
-            <li class="nav-item"><a class="nav-link" href="Foundation.html">Foundation</a></li>
-            <li class="nav-item"><a class="nav-link" href="Haarspray.html">Haarprodukte</a></li>
+            <li class="nav-item"><a class="nav-link" href="Foundation.html">Fundation</a></li>
+            <li class="nav-item"><a class="nav-link" href="Bronzer.html">Bronzer</a></li>
+            <li class="nav-item"><a class="nav-link" href="Haarspray.html">Haarspray</a></li>
             <li class="nav-item"><a class="nav-link" href="About_us.html">About us</a></li>
             <li class="nav-item"><a class="nav-link active" aria-current="true" href="Warenkorb.html">Warenkorb</a></li>
           </ul>
@@ -45,13 +46,13 @@
 
     <!-- Zusammenfassung -->
     <section id="summary" class="mt-5 p-4 bg-light rounded shadow-sm d-none">
-      <h4 class="mb-3">🧾 Zusammenfassung</h4>
+      
       <div class="d-flex justify-content-between">
         <span>Gesamtsumme:</span>
         <span id="total-price">0,00 fr.</span>
       </div>
       <div class="text-center mt-4">
-        <button class="btn btn-success btn-lg">💳 Jetzt kaufen</button>
+        <button id="checkout-btn" class="btn btn-success btn-lg">💳 Jetzt kaufen</button>
       </div>
     </section>
   </main>
@@ -66,52 +67,67 @@
 
   <!-- Warenkorb-Funktion -->
   <script>
-    const cartContainer = document.getElementById('cart-items');
-    const summary = document.getElementById('summary');
-    const totalPriceElement = document.getElementById('total-price');
+  // Warenkorbcontainer
+  const cartContainer = document.getElementById('cart-items');
+  const summary = document.getElementById('summary');
+  const totalPriceElement = document.getElementById('total-price');
 
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  // Warenkorb aus localStorage laden
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    if (cart.length === 0) {
-      cartContainer.innerHTML = '<p class="text-center text-muted">Dein Warenkorb ist leer 🛍️</p>';
-    } else {
-      summary.classList.remove('d-none');
-      let total = 0;
+  // Wenn der Warenkorb leer ist
+  if (cart.length === 0) {
+    cartContainer.innerHTML = '<p class="text-center text-muted">Dein Warenkorb ist leer 🛍️</p>';
+    summary.classList.add('d-none');
+  } else {
+    summary.classList.remove('d-none');
+    let total = 0;
 
-      cart.forEach(item => {
-        const itemHTML = `
-          <div class="col-md-6">
-            <div class="card p-3 shadow-sm">
-              <div class="row g-0 align-items-center">
-                <div class="col-4 text-center">
-                  <img src="${item.image}" class="img-fluid rounded" alt="${item.name}">
-                </div>
-                <div class="col-8 ps-3">
-                  <h5>${item.name}</h5>
-                  <p class="fw-bold mb-1">${item.price.toFixed(2)} CHF</p>
-                  <p class="text-muted small mb-1">Menge: ${item.quantity}</p>
-                  <button class="btn btn-sm btn-outline-danger remove-item" data-name="${item.name}">Entfernen</button>
-                </div>
+    // Produkte anzeigen
+    cart.forEach(item => {
+      const itemHTML = `
+        <div class="col-md-6 mb-3">
+          <div class="card p-3 shadow-sm">
+            <div class="row g-0 align-items-center">
+              <div class="col-4 text-center">
+                <img src="${item.image}" class="img-fluid rounded" alt="${item.name}">
+              </div>
+              <div class="col-8 ps-3">
+                <h5>${item.name}</h5>
+                <p class="fw-bold mb-1">${(parseFloat(item.price) || 0).toFixed(2)} CHF</p>
+                <p class="text-muted small mb-1">Menge: ${item.quantity}</p>
+                <button class="btn btn-sm btn-outline-danger remove-item" data-name="${item.name}">Entfernen</button>
               </div>
             </div>
-          </div>`;
-        cartContainer.insertAdjacentHTML('beforeend', itemHTML);id="sell"
-        total += item.price * item.quantity;
-      });
+          </div>
+        </div>`;
+      cartContainer.insertAdjacentHTML('beforeend', itemHTML);
 
-      totalPriceElement.textContent = total.toFixed(2) + " CHF";
+      total += item.price * item.quantity;
+    });
 
-      // Entfernen-Funktion
-      document.querySelectorAll('.remove-item').forEach(btn => {
-        btn.addEventListener('click', function() {
-          const name = this.dataset.name;
-          const updatedCart = cart.filter(p => p.name !== name);
-          localStorage.setItem('cart', JSON.stringify(updatedCart));
-          location.reload();
-        });
+    totalPriceElement.textContent = total.toFixed(2) + " CHF";
+
+    // Entfernen-Funktion
+    document.querySelectorAll('.remove-item').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const name = this.dataset.name;
+        cart = cart.filter(p => p.name !== name);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        location.reload();
       });
-    }
-  </script>
+    });
+  }
+    const checkoutBtn = document.getElementById('checkout-btn');
+
+  checkoutBtn.addEventListener('click', function() {
+    // Leeren des Warenkorbs nach dem Kauf
+    localStorage.removeItem('cart');
+
+    // Weiterleitung zur Danke-Seite
+    window.location.href = "danke.html";
+  });
+</script>
 
 </body>
 </html>

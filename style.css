@@ -32,14 +32,15 @@
   color: white;
   text-align: center;
 }
-#sell{
-   background-image: url('images/Bild1.png');
+
+#sell {
+  background-image: url('images/Bild1.png');
   background-repeat: no-repeat;
   background-size: cover;
   /* besser als 100% 100%, bleibt proportional */
   background-attachment: fixed;
- 
-  color: white; 
+
+  color: white;
 }
 
 #products .card {
@@ -80,6 +81,7 @@ h2,
 h3 {
   color: #f18ab4;
 }
+
 h4 {
   color: #fff;
 }
@@ -126,35 +128,93 @@ footer {
   font-size: 0.9rem;
   color: #555;
 }
+
 .photos {
-  width: 100%;        /* passt sich dem Container an */
-  max-width: 400px;   /* maximale Breite */
-  height: auto;       /* proportional */
-  border-radius: 8px; /* optional */
+  width: 100%;
+  /* passt sich dem Container an */
+  max-width: 400px;
+  /* maximale Breite */
+  height: auto;
+  /* proportional */
+  border-radius: 8px;
+  /* optional */
   display: block;
-  margin: 0 0 20px 0; /* nur unten Abstand, links oben rechts = 0 */
+  margin: 0 0 20px 0;
+  /* nur unten Abstand, links oben rechts = 0 */
 }
 
 /* Auf kleinen Bildschirmen */
 @media (max-width: 576px) {
   .photos {
-    max-width: 100%;   /* volle Breite auf kleinen Geräten */
+    max-width: 100%;
+    /* volle Breite auf kleinen Geräten */
     margin-bottom: 15px;
   }
 }
+
 /* Mit Chat gpt generiert da es mit dem Java code zusammen hängt*/
 .remove-item {
-  background-color: #b23b6b; /* Hintergrundfarbe */
-  color: white;               /* Textfarbe */
-  border: none;               /* Rand entfernen */
-  padding: 0.25rem 0.5rem;    /* etwas Padding */
-  border-radius: 5px;         /* abgerundete Ecken */
-  font-size: 0.85rem;         /* Schriftgröße */
-  cursor: pointer;            /* Mauszeiger als Hand */
+  background-color: #b23b6b;
+  /* Hintergrundfarbe */
+  color: white;
+  /* Textfarbe */
+  border: none;
+  /* Rand entfernen */
+  padding: 0.25rem 0.5rem;
+  /* etwas Padding */
+  border-radius: 5px;
+  /* abgerundete Ecken */
+  font-size: 0.85rem;
+  /* Schriftgröße */
+  cursor: pointer;
+  /* Mauszeiger als Hand */
 }
 
 .remove-item:hover {
-  background-color: #8a2f55; /* Farbe beim Hover */
+  background-color: #8a2f55;
+  /* Farbe beim Hover */
   color: #fff;
 }
-
+.text-crystal {
+  color: #f18ab4; /* Crystal-Rosa, passend zu deinem Design */
+}
+/* Kleine Bilder für Vorschau oder Produktbilder */
+.img-about{
+  max-width: 600px;   /* maximale Breite */
+  height: auto;       /* proportional zur Breite */
+  border-radius: 12px; /* abgerundete Ecken */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* leichter Schatten */
+  display: block;     /* Block-Element für Margin-Anpassungen */
+  margin: 10px auto;  /* zentriert und Abstand oben/unten */
+}
+.img-Team{
+  max-width: 400px;   /* maximale Breite */
+  height: auto;       /* proportional zur Breite */
+  border-radius: 12px; /* abgerundete Ecken */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* leichter Schatten */
+  display: block;     /* Block-Element für Margin-Anpassungen */
+  margin: 10px auto;  /* zentriert und Abstand oben/unten */
+}
+@media (max-width: 768px) {
+  .img-about {
+    max-width: 200px;
+  }
+}
+@media (max-width: 768px) {
+  .img-Team {
+    max-width: 200px;
+  }
+}
+.img-Produkte{
+  max-width: 400px;   /* maximale Breite */
+  height: auto;       /* proportional zur Breite */
+  border-radius: 12px; /* abgerundete Ecken */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* leichter Schatten */
+  display: block;     /* Block-Element für Margin-Anpassungen */
+  margin: 10px auto;  /* zentriert und Abstand oben/unten */
+}
+@media (max-width: 768px) {
+  .img-Produkte {
+    max-width: 200px;
+  }
+}

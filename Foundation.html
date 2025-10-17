@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produktname – Chrystal & Co.</title>
+  <title>Fundation – Chrystal & Co.</title>
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -27,11 +28,12 @@
             <li class="nav-item"><a class="nav-link" href="Highlighter.html">Highlighter</a></li>
             <li class="nav-item"><a class="nav-link" href="Primer.html">Primer</a></li>
             <li class="nav-item"><a class="nav-link" href="Puder.html">Puder</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="true" href="Foundation.html">Foundation</a></li>
-            <li class="nav-item"><a class="nav-link" href="Haarspray.html">Haarprodukte</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="true" href="Foundation.html">Fundation</a>
+            </li>
             <li class="nav-item"><a class="nav-link" href="Bronzer.html">Bronzer</a></li>
+            <li class="nav-item"><a class="nav-link" href="Haarspray.html">Haarprodukte</a></li>
             <li class="nav-item"><a class="nav-link" href="About_us.html">About us</a></li>
-            <li class="nav-item"><a class="nav-link" href="Warenkorb.html">Warenkorb</a></li>
+            <li class="nav-item"><a class="nav-link" href="Warenkorb.html">🛒</a></li>
           </ul>
         </div>
       </div>
@@ -43,21 +45,18 @@
     <div id="sell" class="row align-items-center">
       <!-- Produktbild -->
       <div class="col-md-5 text-center">
-        <img src="images/Fundation.jpg" alt="Produktbild" class="img-fluid rounded shadow-sm blush-img">
+        <img src="images/Fundation.jpg" alt="Produktbild" class="img-Produkte">
       </div>
 
       <!-- Produktbeschreibung -->
       <div class="col-md-7">
-        <h1 class="mb-3">PRODUKTNAME</h1>
-        <p class="lead text-white">Kurze Produktbeschreibung oder Slogan.</p>
+        <h1 class="mb-3">Fundation</h1>
+        <p class="lead text-white">Gleichmäßiger Teint für den ganzen Tag.</p>
 
-        <h4 class="text-white fw-bold mb-3">Preis: XX,XX CHF</h4>
+        <h4 class="text-white fw-bold mb-3">Preis: 16.99 CHF</h4>
 
         <!-- Kaufen-Button -->
-        <button 
-          class="btn btn-primary btn-lg add-to-cart"
-          data-name="PRODUKTNAME"
-          data-price="XX.XX"
+        <button class="btn btn-primary btn-lg add-to-cart" data-name="Fundation" data-price="16.99"
           data-image="images/Fundation.jpg">
           🛒 In den Warenkorb
         </button>
@@ -68,21 +67,40 @@
 
     <!-- Anleitung / Beschreibung -->
     <section class="mt-4">
-      <h2>Anwendung & Tipps</h2>
+      <h2>Anwendung</h2>
 
       <ol class="mt-3">
-        <li><strong>Schritt 1:</strong><br>
-          Beschreibe hier den ersten Schritt der Anwendung.
+        <li><strong>Vorbereitung der Haut:</strong><br>
+          • Reinige das Gesicht gründlich mit einem sanften Reinigungsprodukt, das zu deinem Hauttyp passt.<br>
+          • Trage anschließend eine Feuchtigkeitscreme und gegebenenfalls Sonnenschutz auf.<br>
+          • Lass die Pflegeprodukte einige Minuten einziehen, damit sie sich nicht mit der Foundation vermischen.<br>
         </li>
-        <li><strong>Schritt 2:</strong><br>
-          Beschreibe den zweiten Schritt.
+        <li><strong>Auftragen der Foundation:</strong><br>
+          • Wähle eine Foundation, die deinem Hautton entspricht, für ein natürliches Ergebnis.<br>
+          • Gib eine kleine Menge auf den Handrücken oder direkt auf das Gesicht.<br>
+          • Verteile die Foundation mit einem Pinsel, Schwämmchen oder den Fingern gleichmäßig auf Stirn, Wangen, Nase
+          und Kinn.<br>
+          • Beginne in der Mitte des Gesichts und arbeite nach außen hin, um harte Übergänge zu vermeiden.<br>
         </li>
-        <li><strong>Schritt 3:</strong><br>
-          Beschreibe den dritten Schritt.
+        <li><strong>Weiteres Vorgehen:</strong><br>
+          • Verblende die Foundation sorgfältig an Haaransatz, Kieferlinie und Hals, damit keine sichtbaren Ränder
+          entstehen.<br>
+          • Für einen strahlenden Teint kannst du eine leichte Schicht Highlighter oder hellere Foundation unter den
+          Augen und auf dem Nasenrücken auftragen.<br>
+          • Fixiere die Foundation bei Bedarf mit transparentem Puder, damit der Look länger hält.<br>
+          • Entferne die Foundation am Ende des Tages gründlich, um die Haut zu pflegen und Rückstände zu vermeiden.<br>
         </li>
       </ol>
 
-      <img src="images/ANWENDUNG_BILD.jpg" alt="Anwendung" class="photos img-fluid mt-3">
+      <img src="images/Primer_auftragen.jpg" alt="Anwendung" class="photos img-fluid mt-3">
+
+      <h3 class="mt-4">💡 Tipps:</h3>
+      <ul>
+        <li>Tupfe flüssige Foundation lieber leicht auf, statt sie zu verreiben, um ein gleichmäßiges Finish zu erhalten.</li>
+        <li>Bei trockener Haut: Cremige oder flüssige Formeln verwenden.</li>
+        <li>Bei öliger Haut: Mattierende oder puderbasierte Foundations bevorzugen.</li>
+        <li>Reinige deine Pinsel oder Schwäme regelmäsig, da sich darin Bakterien und Hautpartickel sammeln können.</li>
+      </ul>
     </section>
   </main>
 
@@ -96,7 +114,7 @@
 
   <!-- Warenkorb-Funktion -->
   <script>
-    document.querySelector('.add-to-cart').addEventListener('click', function() {
+    document.querySelector('.add-to-cart').addEventListener('click', function () {
       const product = {
         name: this.dataset.name,
         price: parseFloat(this.dataset.price),
@@ -118,4 +136,5 @@
     });
   </script>
 </body>
+
 </html>
